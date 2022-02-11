@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -46,11 +47,32 @@ namespace LearnTaskWeb
             app.UseRouting();
 
             app.UseAuthorization();
+            app.Map("/home", Home);
+            app.Map("/about", About);
+
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
             });
         }
+
+        private static void Home(IApplicationBuilder app)
+        {
+            app.Run(async context =>
+            {
+                await context.Response.WriteAsync("Home");
+            });
+        }
+
+        private static void About(IApplicationBuilder app)
+        {
+            app.Run(async context =>
+            {
+                await context.Response.WriteAsync("About");
+            });
+        }
+
+
     }
 }
