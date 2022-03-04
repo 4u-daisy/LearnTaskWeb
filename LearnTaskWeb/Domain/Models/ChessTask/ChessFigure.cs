@@ -7,9 +7,11 @@ namespace LearnTaskWeb.Domain.Models.ChessTask
 {
     public class ChessFigure
     {
-        protected ChessFigure _figure;
+        protected ChessBoard _board;
+        protected int _xCoordinate;
+        protected int _yCoordinate;
 
-        protected virtual void FillBoard(ChessBoard board)
+        public virtual void FillBoard()
         {
             Console.WriteLine("Fill in the figures on the board");
         }
@@ -18,6 +20,7 @@ namespace LearnTaskWeb.Domain.Models.ChessTask
         {
             return false;
         }
+
 
     }
 

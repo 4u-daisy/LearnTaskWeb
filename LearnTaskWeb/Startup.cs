@@ -49,7 +49,7 @@ namespace LearnTaskWeb
             app.UseAuthorization();
             app.Map("/home", Home);
             app.Map("/about", About);
-
+            app.Map("/listofgays", ListOfGays);
 
             app.UseEndpoints(endpoints =>
             {
@@ -70,6 +70,14 @@ namespace LearnTaskWeb
             app.Run(async context =>
             {
                 await context.Response.WriteAsync("About");
+            });
+        }
+
+        private static void ListOfGays(IApplicationBuilder app)
+        {
+            app.Run(async context =>
+            {
+                await context.Response.WriteAsync("List of evil people who offend me");
             });
         }
 

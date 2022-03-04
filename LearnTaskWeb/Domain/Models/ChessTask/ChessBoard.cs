@@ -10,18 +10,22 @@ namespace LearnTaskWeb.Domain.Models.ChessTask
         public readonly int SIZE_Board = 8;
 
         public bool[][] _chessBoard;        //TO DO ovveride operator[][]
-        private ChessFigure _figure;
         private int _xCoordinate;
         private int _yCoordinate;
 
-        ChessBoard(ChessFigure figure, int xCoordinate, int yCoordinate)
+        public Tuple<int, int> CurrentlyCoordinate { get { return Tuple.Create(_xCoordinate, _yCoordinate); } }
+
+        public ChessBoard()
+        {
+        }
+
+        public ChessBoard(int xCoordinate, int yCoordinate)
         {
             _chessBoard = new bool[SIZE_Board][];
-            for(var i = 0; i < SIZE_Board; i++)
+            for (var i = 0; i < SIZE_Board; i++)
             {
                 _chessBoard[i] = new bool[SIZE_Board];
             }
-            _figure = figure;
             _xCoordinate = xCoordinate;
             _yCoordinate = yCoordinate;
         }
@@ -37,7 +41,6 @@ namespace LearnTaskWeb.Domain.Models.ChessTask
                 _xCoordinate = value;
             }
         }
-
         public int yCoordinate
         {
             get

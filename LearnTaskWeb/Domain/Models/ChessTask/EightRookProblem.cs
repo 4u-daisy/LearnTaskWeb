@@ -7,14 +7,28 @@ namespace LearnTaskWeb.Domain.Models.ChessTask
 {
     public class EightRookProblem : ChessFigure
     {
-        protected override void FillBoard(ChessBoard board)
+        public EightRookProblem()
         {
-            int x = board.xCoordinate;
-            int y = board.yCoordinate;
+            _xCoordinate = 0;
+            _yCoordinate = 0;
+            _board = new ChessBoard(_xCoordinate, _yCoordinate);
+        }
+        public EightRookProblem(int x, int y)
+        {
+            _xCoordinate = x;
+            _yCoordinate = y;
+            _board = new ChessBoard(_xCoordinate, _yCoordinate);
+        }
+        public ChessBoard Board { get { return _board; } }
 
-            for(var i = 0; i < board.SIZE_Board; i++)
+        public override void FillBoard()
+        {
+            int x = _board.xCoordinate;
+            int y = _board.yCoordinate;
+
+            for (var i = 0; i < _board.SIZE_Board; i++)
             {
-                board._chessBoard[(i + x) % 8][(i + y) % 8] = true;
+                _board._chessBoard[(i + x) % 8][(i + y) % 8] = true;
             }
         }
 
