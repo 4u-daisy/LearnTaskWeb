@@ -10,33 +10,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-/*
-         public void ConfigureServices(IServiceCollection services)
-        {
-            services.AddControllersWithViews(c => { c.EnableEndpointRouting = false; });
-            services.AddMvcCore(o => o.EnableEndpointRouting = false);
-        }
-
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-        {
-            if (env.IsDevelopment())
-                app.UseDeveloperExceptionPage();
-
-
-            app.UseMvc(c =>
-                 c.MapRoute(
-                     name: "default",
-                     //шаблон того ка кбудет построен URL
-                     //дальше пример (куда уходит запрос)"www.za.piv.com/{controller}/{action}/{id?}",
-                     template: "{controller}/{action}/{id?}",
-                     defaults: new { controller = "Root", action = "Person" }
-                 )
-             );
-
-        }
- */
-
 namespace LearnTaskWeb
 {
     public class Startup
@@ -127,6 +100,31 @@ namespace LearnTaskWeb
                      defaults: new { controller = "Root", action = "Index" }
                  )
              );
+            app.Map("/home", Home);
+            app.Map("/listofgays", ListOfGays);
+        }
+
+        private static void Home(IApplicationBuilder app)
+        {
+            app.UseMvc(c =>
+                 c.MapRoute(
+                     name: "home",
+                     template: "{controller}/{action}/{id?}",
+                     defaults: new { controller = "Home", action = "Page" }
+                 )
+             );
+        }
+
+        private static void ListOfGays(IApplicationBuilder app)
+        {
+            app.UseMvc(c =>
+                 c.MapRoute(
+                     name: "listofgays",
+                     template: "{controller}/{action}/{id?}",
+                     defaults: new { controller = "ListOfGays", action = "People" }
+                 )
+             );
+
         }
     }
 }

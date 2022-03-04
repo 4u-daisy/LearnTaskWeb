@@ -39,3 +39,5 @@ C:\Users\HOME\source\repos\LearnTaskWeb\LearnTaskWeb\obj\Debug\net5.0\LearnTaskW
 C:\Users\HOME\source\repos\LearnTaskWeb\LearnTaskWeb\obj\Debug\net5.0\LearnTaskWeb.genruntimeconfig.cache
 C:\Users\HOME\source\repos\LearnTaskWeb\LearnTaskWeb\obj\Debug\net5.0\LearnTaskWeb.csproj.CopyComplete
 C:\Users\HOME\source\repos\LearnTaskWeb\LearnTaskWeb\obj\Debug\net5.0\Razor\Views\Root\Index.cshtml.g.cs
+C:\Users\HOME\source\repos\LearnTaskWeb\LearnTaskWeb\obj\Debug\net5.0\Razor\Views\Home\Page.cshtml.g.cs
+C:\Users\HOME\source\repos\LearnTaskWeb\LearnTaskWeb\obj\Debug\net5.0\Razor\Views\ListOfGays\People.cshtml.g.cs
