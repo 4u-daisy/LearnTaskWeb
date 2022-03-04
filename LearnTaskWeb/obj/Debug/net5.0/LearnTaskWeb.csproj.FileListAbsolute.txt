@@ -38,3 +38,4 @@ C:\Users\HOME\source\repos\LearnTaskWeb\LearnTaskWeb\obj\Debug\net5.0\ref\LearnT
 C:\Users\HOME\source\repos\LearnTaskWeb\LearnTaskWeb\obj\Debug\net5.0\LearnTaskWeb.pdb
 C:\Users\HOME\source\repos\LearnTaskWeb\LearnTaskWeb\obj\Debug\net5.0\LearnTaskWeb.genruntimeconfig.cache
 C:\Users\HOME\source\repos\LearnTaskWeb\LearnTaskWeb\obj\Debug\net5.0\LearnTaskWeb.csproj.CopyComplete
+C:\Users\HOME\source\repos\LearnTaskWeb\LearnTaskWeb\obj\Debug\net5.0\Razor\Views\Root\Index.cshtml.g.cs
