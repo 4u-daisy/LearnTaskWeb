@@ -14,80 +14,12 @@ namespace LearnTaskWeb
 {
     public class Startup
     {
-        //public Startup(IConfiguration configuration)
-        //{
-        //    Configuration = configuration;
-        //}
-
-        //public IConfiguration Configuration { get; }
-
-        //// This method gets called by the runtime. Use this method to add services to the container.
-        //public void ConfigureServices(IServiceCollection services)
-        //{
-        //    services.AddRazorPages();
-        //}
-
-        //// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        //public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-        //{
-        //    if (env.IsDevelopment())
-        //    {
-        //        app.UseDeveloperExceptionPage();
-        //    }
-        //    else
-        //    {
-        //        app.UseExceptionHandler("/Error");
-        //        // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-        //        app.UseHsts();
-        //    }
-
-        //    app.UseHttpsRedirection();
-        //    app.UseStaticFiles();
-
-        //    app.UseRouting();
-
-        //    app.UseAuthorization();
-        //    app.Map("/home", Home);
-        //    app.Map("/about", About);
-        //    app.Map("/listofgays", ListOfGays);
-
-        //    app.UseEndpoints(endpoints =>
-        //    {
-        //        endpoints.MapRazorPages();
-        //    });
-        //}
-
-        //private static void Home(IApplicationBuilder app)
-        //{
-        //    app.Run(async context =>
-        //    {
-        //        await context.Response.WriteAsync("Home");
-        //    });
-        //}
-
-        //private static void About(IApplicationBuilder app)
-        //{
-        //    app.Run(async context =>
-        //    {
-        //        await context.Response.WriteAsync("About");
-        //    });
-        //}
-
-        //private static void ListOfGays(IApplicationBuilder app)
-        //{
-        //    app.Run(async context =>
-        //    {
-        //        await context.Response.WriteAsync("List of evil people who offend me");
-        //    });
-        //}
-
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews(c => { c.EnableEndpointRouting = false; });
             services.AddMvcCore(o => o.EnableEndpointRouting = false);
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
@@ -101,7 +33,7 @@ namespace LearnTaskWeb
                  )
              );
             app.Map("/home", Home);
-            app.Map("/listofgays", ListOfGays);
+            app.Map("/weatherforecast", WeatherForecast);
         }
 
         private static void Home(IApplicationBuilder app)
@@ -115,13 +47,13 @@ namespace LearnTaskWeb
              );
         }
 
-        private static void ListOfGays(IApplicationBuilder app)
+        private static void WeatherForecast(IApplicationBuilder app)
         {
             app.UseMvc(c =>
                  c.MapRoute(
-                     name: "listofgays",
+                     name: "weatherforecast",
                      template: "{controller}/{action}/{id?}",
-                     defaults: new { controller = "ListOfGays", action = "People" }
+                     defaults: new { controller = "WeatherForecast", action = "WeatherPage" }
                  )
              );
 
